@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useEffect, useState } from 'react';
+import { useLayoutEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import PrayerCards from './components/cards/PrayerCards';
 import Header from './components/date/Header';
@@ -18,7 +18,7 @@ const App = () => {
     const Data = await url.json();
     setPrayerTime(Data.data.timings);
   };
-  useEffect(() => { Api() }, [cityName]);
+  useLayoutEffect(() => { Api() }, [cityName]);
   const [nextPrayer, setNextPrayer] = useState({});
   const nextPrayerTime = () => {
     if (
@@ -60,7 +60,7 @@ const App = () => {
       });
     }
   };
-  useEffect(() => { nextPrayerTime() }, [today, cityName]);
+  useLayoutEffect(() => { nextPrayerTime() }, [today, cityName]);
   let difference = moment(prayerTime[nextPrayer.en], "hh:mm").diff(moment());
   if (nextPrayer.en === "Fajr") {
     const fromNowUntilMidnight = moment("23:59:59", "hh:mm:ss").diff(moment())
