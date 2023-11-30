@@ -60,17 +60,6 @@ const App = () => {
       });
     }
   };
-
-
-
-
-  // console.log(
-  //   moment().isAfter(moment(prayerTime.Isha, "hh:mm")) &&
-  //   moment().isBefore(moment(prayerTime.Fajr, "hh:mm"))
-  // )
-
-
-
   useLayoutEffect(() => { nextPrayerTime() }, [today, cityName]);
   let difference = moment(prayerTime[nextPrayer.en], "hh:mm").diff(moment());
   if (nextPrayer.en === "Fajr") {
