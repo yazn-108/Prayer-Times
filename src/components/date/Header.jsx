@@ -1,6 +1,12 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 import { Col, Row } from 'react-bootstrap';
 const Header = (props) => {
+    Header.propTypes = {
+        today: PropTypes.string,
+        cityName: PropTypes.string,
+        timer: PropTypes.string,
+        nextPrayer: PropTypes.string,
+    };
     return (
         <Row className='date-time'>
             <Col>

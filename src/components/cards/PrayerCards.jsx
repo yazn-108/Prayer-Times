@@ -1,8 +1,11 @@
+import PropTypes from 'prop-types';
 import moment from 'moment';
-import React from 'react';
 import { Card, Row } from 'react-bootstrap';
 import { Flip } from 'react-reveal';
 const PrayerCards = ({ prayerTime }) => {
+    PrayerCards.propTypes = {
+        prayerTime: PropTypes.any,
+    };
     const cardData = [
         { img: "https://wepik.com/api/image/ai/9a07baa7-b49b-4f6b-99fb-2d2b908800c2", title: "الفجر", time: prayerTime.Fajr },
         { img: "https://wepik.com/api/image/ai/9a07bb45-6a42-4145-b6aa-2470408a2921", title: "الظهر", time: prayerTime.Dhuhr },

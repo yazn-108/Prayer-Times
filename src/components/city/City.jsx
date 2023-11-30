@@ -1,6 +1,10 @@
-import React, { useRef, useState } from 'react';
+import PropTypes from 'prop-types';
+import { useRef, useState } from 'react';
 import { cities } from './cities';
 const City = ({ setCityName }) => {
+    City.propTypes = {
+        setCityName: PropTypes.any,
+    };
     const select = useRef()
     const open = () => select.current.classList.toggle("open")
     const [selectName, setSelectName] = useState(localStorage.getItem("cityAR") || "اختر مدينة")
