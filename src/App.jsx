@@ -53,7 +53,10 @@ const App = () => {
         ar: "العشاء",
         en: "Isha",
       });
-    } else {
+    } else if (
+      moment().isAfter(moment(prayerTime.Isha, "hh:mm")) ||
+      moment().isBefore(moment(prayerTime.Fajr, "hh:mm"))
+    ) {
       setNextPrayer({
         ar: "الفجر",
         en: "Fajr",
